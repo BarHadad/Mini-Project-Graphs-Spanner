@@ -18,7 +18,7 @@ def SPANNER(graph, stretch_factor):
     sorted_edges_of_g = sorted(graph.edges(data=True), key=lambda t: t[2].get('weight', 1))
     H = nx.Graph()
     H.add_nodes_from(graph)
-    # for edge {u, v} edge[0] = u and edge[1] = v
+
     for edge in sorted_edges_of_g:
         edge_weight = graph.get_edge_data(edge[0], edge[1], "weight")['weight']
         if nx.has_path(H, edge[0], edge[1]):
